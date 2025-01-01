@@ -28,9 +28,7 @@ EOF
 echo -e "${NC}"
 
 # 输入主域名
-echo -e "${YELLOW}请输入主域名: ${NC}" 
-read website_input
-
+read -p "请输入主域名: " website_input
 
 echo -e "${BLUE}开始收集子域名...${NC}"
 # Subfinder扫描
