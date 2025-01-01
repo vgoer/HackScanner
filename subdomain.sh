@@ -46,7 +46,7 @@ echo -e "${GREEN}✓[2/2] 使用CRT扫描完成${NC}"
 
 # 存活主机
 echo -e "${YELLOW}[1/2] 查看存活主机...${NC}"
-cat subdomains.txt | httpx-toolkit -threads 200 > $website_input/subdomains_alive.txt
+cat $website_input/subdomain1.txt | httpx-toolkit -threads 200 > $website_input/subdomains_alive.txt
 echo -e "${GREEN}✓[2/2] 查看存活主机完成${NC}"
 
 echo -e "${GREEN}子域名收集完成... 结果在 ${BLUE}$website_input/subdomains.txt${NC}"
