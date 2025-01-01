@@ -30,6 +30,14 @@ echo -e "${NC}"
 # 输入主域名
 read -p "请输入主域名: " website_input
 
+# 创建输出目录
+if [ ! -d "$website_input" ]; then
+    if ! mkdir -p "$website_input"; then
+        echo "错误：无法创建输出目录 '$website_input'"
+        exit 1
+    fi
+fi
+
 echo -e "${BLUE}开始收集子域名...${NC}"
 # Subfinder扫描
 echo -e "${YELLOW}[1/2] 使用Subfinder扫描...${NC}"
