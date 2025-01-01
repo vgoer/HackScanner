@@ -11,7 +11,6 @@
 cat << "EOF"
 
 -------------------------------------------------
-
  ___   __    _  _______  _______  _______  ___      ___     
 |   | |  |  | ||       ||       ||   _   ||   |    |   |    
 |   | |   |_| ||  _____||_     _||  |_|  ||   |    |   |    
@@ -19,12 +18,12 @@ cat << "EOF"
 |   | |  _    ||_____  |  |   |  |       ||   |___ |   |___ 
 |   | | | |   | _____| |  |   |  |   _   ||       ||       |
 |___| |_|  |__||_______|  |___|  |__| |__||_______||_______|
-
 -------------------------------------------------
-                                    - by vgoer
+                                v1.0.0 - @vgoer
 EOF
 
 sudo apt update -y
+sudo apt upgrade -y
 sudo apt install golang jq git python3 python3-pip pipx -y
 
 # 将 Go 环境变量配置追加到 .zshrc 文件
@@ -79,5 +78,17 @@ rm -rf chromedriver-linux64.zip chromedriver-linux64
 
 
 # 子域名安装工具
-# subfinder
+
+cat << "EOF"
+
+               _      __ _           _           
+              | |    / _(_)         | |          
+ ___ _   _  __| |__ | |_ _ _ __   __| | ___ _ __ 
+/ __| | | |/ _` '_ \|  _| | '_ \ / _` |/ _ \ '__|
+\__ \ |_| | (_| |_) | | | | | | | (_| |  __/ |   
+|___/\__,_|\__,_.__/|_| |_|_| |_|\__,_|\___|_|   
+                                                  
+EOF
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+sudo apt install httpx-toolkit -y
+
