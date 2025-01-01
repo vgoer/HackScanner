@@ -46,6 +46,7 @@ naabu -host $website_input -c 50 -nmap-cli 'nmap -sV -sC' -o $website_input/$web
 echo -e "${YELLOW}✓[2/2] naabu扫描完成${NC}"
 
 echo -e "${GREEN}端口扫描完成... 结果在 ${BLUE}$website_input/$website_input-full.txt${NC}"
+echo -e "${RED}端口扫描完毕...${NC}"
 
 
 
