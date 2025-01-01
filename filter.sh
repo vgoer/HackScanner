@@ -54,38 +54,39 @@ echo -e "${RED}您输入的域名: $website_url${NC}"
 
 # katana被动扫描
 echo -e "${YELLOW}[1/2] 使用katana被动扫描...${NC}"
-echo "$website_url" | katana -fs waybackarchive,commoncrawl,alienvault,urlscan,github,virustotal -f qurl | uro > "$website_input/output.txt"
+echo "$website_url" | katana -fs waybackarchive,commoncrawl,alienvault,urlscan,github,virustotal -f qurl | uro > "$website_input/output/output.txt"
 echo -e "${YELLOW}✓[2/2] katana被动扫描完成${NC}"
 
 # katana主动扫描
 echo -e "${YELLOW}[1/2] 使用katana主动扫描...${NC}"
-katana -u "$website_url" -d 5 -c 15 -js -silent -timeout 20 -f qurl | uro | anew "$website_input/output.txt"
+katana -u "$website_url" -d 5 -c 15 -f qurl | uro | anew "$website_input/output/output.txt"
 echo -e "${YELLOW}✓[2/2] katana主动扫描完成${NC}"
 
-exit;
 # XSS
-echo "Filtering URLs for potential XSS endpoints..."
-cat "$output_dir/output.txt" | Gxss | kxss | grep -oP '^URL: \K\S+' | sed 's/=.*/=/' | sort -u > "$output_dir/xss_output.txt"
-echo "Extracting final filtered URLs to $output_dir/xss_output.txt..."
+echo -e "${YELLOW}[1/2] 使用Gxss和kxss过滤XSS...${NC}"
+cat "$website_input/output/output.txt" | Gxss | kxss | grep -oP '^URL: \K\S+' | sed 's/=.*/=/' | sort -u > "$website_input/output/xss.txt"
+echo -e "${YELLOW}✓[2/2] 过滤XSS完成${NC}"
 
 # Open Redirect
-echo "Filtering URLs for potential Open Redirect endpoints..."
-cat "$output_dir/output.txt" | gf or | sed 's/=.*/=/' | sort -u > "$output_dir/open_redirect_output.txt"
+echo -e "${YELLOW}[1/2] 使用gf过滤Open Redirect...${NC}"
+cat "$website_input/output/output.txt" | gf or | sed 's/=.*/=/' | sort -u > "$website_input/output/open_redirect.txt"
+echo -e "${YELLOW}✓[2/2] 过滤Open Redirect完成${NC}"
 
 # LFI
-echo "Filtering URLs for potential LFI endpoints..."
-cat "$output_dir/output.txt" | gf lfi | sed 's/=.*/=/' | sort -u > "$output_dir/lfi_output.txt"
+echo -e "${YELLOW}[1/2] 使用gf过滤LFI...${NC}"
+cat "$website_input/output/output.txt" | gf lfi | sed 's/=.*/=/' | sort -u > "$website_input/output/lfi.txt"
+echo -e "${YELLOW}✓[2/2] 过滤LFI完成${NC}"
 
 # SQLi
-echo "Filtering URLs for potential SQLi endpoints..."
-cat "$output_dir/output.txt" | gf sqli | sed 's/=.*/=/' | sort -u > "$output_dir/sqli_output.txt"
+echo -e "${YELLOW}[1/2] 使用gf过滤SQLi...${NC}"
+cat "$website_input/output/output.txt" | gf sqli | sed 's/=.*/=/' | sort -u > "$website_input/output/sqli.txt"
+echo -e "${YELLOW}✓[2/2] 过滤SQLi完成${NC}"
 
-# Remove the intermediate file output/output.txt
-rm "$output_dir/output.txt"
 
-# Notify the user that all tasks are complete
-echo "Filtered URLs have been saved to the respective output files in the 'output' directory:"
-echo "  - XSS: $output_dir/xss_output.txt"
-echo "  - Open Redirect: $output_dir/open_redirect_output.txt"
-echo "  - LFI: $output_dir/lfi_output.txt"
-echo "  - SQLi: $output_dir/sqli_output.txt"
+# 结果
+echo -e "${GREEN}过滤结果:${NC}"
+echo -e "${GREEN}  - XSS: $website_input/output/xss.txt${NC}"
+echo -e "${GREEN}  - Open Redirect: $website_input/output/open_redirect.txt${NC}"
+echo -e "${GREEN}  - LFI: $website_input/output/lfi.txt${NC}"
+echo -e "${GREEN}  - SQLi: $website_input/output/sqli.txt${NC}"
+echo -e "${RED}过滤完成...${NC}"
