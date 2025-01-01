@@ -89,7 +89,7 @@ cd HackScanner
 
 ### 安装工具包
 ```bash
-sudo ./install.sh
+./install.sh
 ```
 
 ### 安装依赖
