@@ -60,3 +60,4 @@ echo -e "${YELLOW}✓[2/2] 查看存活主机完成${NC}"
 
 echo -e "${GREEN}子域名收集完成... 结果在 ${BLUE}$website_input/subdomains.txt${NC}"
 echo -e "${GREEN}存活主机结果在... 结果在 ${BLUE}$website_input/subdomains_alive.txt${NC}"
+echo -e "${RED}子域名收集完毕...${NC}"
