@@ -42,18 +42,21 @@ echo -e "${BLUE}开始收集子域名...${NC}"
 # Subfinder扫描
 echo -e "${YELLOW}[1/2] 使用Subfinder扫描...${NC}"
 subfinder -d $website_input -all -recursive > $website_input/subdomain1.txt
-echo -e "${GREEN}✓[2/2] Subfinder扫描完成${NC}"
+echo -e "${YELLOW}✓[2/2] Subfinder扫描完成${NC}"
 
 # crt扫描
 echo -e "${YELLOW}[2/2] 使用CRT扫描...${NC}"
 curl -s "https://crt.sh/?q=%.${website_input}&output=json" | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u > $website_input/subdomain2.txt
-echo -e "${GREEN}✓[2/2] 使用CRT扫描完成${NC}"
+echo -e "${YELLOW}✓[2/2] 使用CRT扫描完成${NC}"
 
+# 合并
+cat $website_input/subdomain1.txt $website_input/subdomain2.txt  | sort | uniq > $website_input/subdomains.txt
+rm -rf $website_input/subdomain1.txt $website_input/subdomain2.txt
 
 # 存活主机
 echo -e "${YELLOW}[1/2] 查看存活主机...${NC}"
-cat $website_input/subdomain1.txt | httpx-toolkit -threads 200 > $website_input/subdomains_alive.txt
-echo -e "${GREEN}✓[2/2] 查看存活主机完成${NC}"
+cat $website_input/subdomains.txt | httpx-toolkit -threads 200 > $website_input/subdomains_alive.txt
+echo -e "${YELLOW}✓[2/2] 查看存活主机完成${NC}"
 
 echo -e "${GREEN}子域名收集完成... 结果在 ${BLUE}$website_input/subdomains.txt${NC}"
 echo -e "${GREEN}存活主机结果在... 结果在 ${BLUE}$website_input/subdomains_alive.txt${NC}"
