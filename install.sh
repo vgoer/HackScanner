@@ -110,3 +110,29 @@ sudo apt-get install libpcap-dev -y
 go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
 
 
+
+
+# 扫描工具
+cat << "EOF"
+ _______ ____   ____  _      _____ 
+|__   __/ __ \ / __ \| |    / ____|
+   | | | |  | | |  | | |   | (___  
+   | | | |  | | |  | | |    \___ \ 
+   | | | |__| | |__| | |________) |
+   |_|  \____/ \____/|______|____/ 
+                                   
+EOF
+go install github.com/projectdiscovery/katana/cmd/katana@latest
+sudo apt install pipx -y
+# uro url提取
+pipx install uro
+# anew 文件合并
+go install -v github.com/tomnomnom/anew@latest
+# xss
+go install github.com/KathanP19/Gxss@latest
+# kxss
+go install github.com/Emoe/kxss@latest
+# gf
+go install github.com/tomnomnom/gf@latest
+# waybackurls
+go install github.com/tomnomnom/waybackurls@latest
