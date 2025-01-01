@@ -41,6 +41,7 @@ fi
 
 
 echo -e "${BLUE}开始端口扫描...${NC}"
+
 echo -e "${YELLOW}[1/2] 使用naabu扫描...${NC}"
 naabu -host $website_input -c 50 -nmap-cli 'nmap -sV -sC' -o $website_input/$website_input-full.txt
 echo -e "${YELLOW}✓[2/2] naabu扫描完成${NC}"
