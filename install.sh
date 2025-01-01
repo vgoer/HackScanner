@@ -92,3 +92,21 @@ EOF
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 sudo apt install httpx-toolkit -y
 
+
+
+# 端口扫描工具
+cat << "EOF"
+
+  ____  _____  _____ _   _    _____   ____  _____ _______ 
+ / __ \|  __ \|  ___| \ | |  |  __ \ / __ \|  __ \__   __|
+| |  | | |__) | |__ |  \| |  | |__) | |  | | |__) | | |   
+| |  | |  ___/|  __|| . ` |  |  ___/| |  | |  _  /  | |   
+| |__| | |    | |___| |\  |  | |    | |__| | | \ \  | |   
+ \____/|_|    |_____|_| \_|  |_|     \____/|_|  \_\ |_|   
+                                                           
+EOF
+# 安装 为缺少 libpcap 开发库
+sudo apt-get install libpcap-dev -y
+go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
+
+
