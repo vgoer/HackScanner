@@ -32,7 +32,7 @@ EOF
 echo -e "${NC}"
 
 # 输入主域名
-read -p "请输入主域名: " website_input
+read -p "请输入域名: " website_input
 
 # 创建输出目录
 if [ ! -d "$website_input/output" ]; then
@@ -49,7 +49,7 @@ else
     website_url="$website_input"
 fi
 # 您输入的域名
-echo "${RED}您输入的域名: $website_url${NC}"
+echo -e "${RED}您输入的域名: $website_url${NC}"
 
 
 # katana被动扫描
@@ -59,7 +59,7 @@ echo -e "${YELLOW}✓[2/2] katana被动扫描完成${NC}"
 
 # katana主动扫描
 echo -e "${YELLOW}[1/2] 使用katana主动扫描...${NC}"
-katana -u "$website_url" -d 5 -c 15 -js -silent -timeout 20 -f qurl | uro | anew "$output_dir/output.txt"
+katana -u "$website_url" -d 5 -c 15 -js -silent -timeout 20 -f qurl | uro | anew "$website_input/output.txt"
 echo -e "${YELLOW}✓[2/2] katana主动扫描完成${NC}"
 
 exit;
