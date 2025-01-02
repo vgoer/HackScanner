@@ -67,6 +67,7 @@
 | HackScanner.py | 攻击主脚本 |
 | Filter.sh | 快速过滤脚本 |
 | Subdomain.sh | 子域名收集脚本 |
+| Openport.sh | 端口扫描脚本 |
 | Install.sh | 安装工具包脚本 |
 
 
