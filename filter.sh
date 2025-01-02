@@ -52,22 +52,29 @@ if [[ ! $website_input =~ ^https?:// ]]; then
 else
     website_url="$website_input"
 fi
+
 # 您输入的域名
 # Your input domain
 echo -e "${RED}Your input domain: $website_url${NC}"
+
+# 使用waybackurls知道域名下的url
+# Using waybackurls to know the urls under the domain
+echo -e "${YELLOW}[1/2] Using waybackurls to know the urls under the domain...${NC}"
+echo "$website_url" | waybackurls | anew "$website_input/output/output.txt"
+echo -e "${YELLOW}✓[2/2] Waybackurls completed${NC}"
 
 
 # katana被动扫描
 # Katana passive scanning
 echo -e "${YELLOW}[1/2] Using katana for passive scanning...${NC}"
-echo "$website_url" | katana -fs waybackarchive,commoncrawl,alienvault,urlscan,github,virustotal -f qurl | uro > "$website_input/output/output.txt"
+echo "$website_url" | katana -fs waybackarchive,commoncrawl,alienvault,urlscan,github,virustotal -f qurl | uro | anew "$website_input/output/output.txt"
 echo -e "${YELLOW}✓[2/2] Katana passive scanning completed${NC}"
 
 
 # katana主动扫描
 # Katana active scanning
 echo -e "${YELLOW}[1/2] Using katana for active scanning...${NC}"
-katana -u "$website_url" -d 5 -c 15 -f qurl | uro | anew "$website_input/output/output.txt"
+echo "$website_url" | katana  -d 5  -f qurl | hakrawler -d 3 | unfurl -u | uro | anew "$website_input/output/output.txt"
 echo -e "${YELLOW}✓[2/2] Katana active scanning completed${NC}"
 
 # XSS过滤
