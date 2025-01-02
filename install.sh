@@ -132,7 +132,15 @@ go install -v github.com/tomnomnom/anew@latest
 go install github.com/KathanP19/Gxss@latest
 # kxss
 go install github.com/Emoe/kxss@latest
-# gf
+# gf 
 go install github.com/tomnomnom/gf@latest
-# waybackurls
+# waybackurls 知道域名下的url
 go install github.com/tomnomnom/waybackurls@latest
+# krawler 爬虫
+go install github.com/hakluke/hakrawler@latest
+# unfurl 解析url
+go install github.com/tomnomnom/unfurl@latest
+
+
+
+echo -e "\033[32m[0/0] Install Finshed...\033[0m"
