@@ -50,7 +50,7 @@ naabu -host $website_input -c 50 -nmap-cli 'nmap -sV -sC' > $website_input/$webs
 echo -e "${YELLOW}✓[2/2] Naabu scan completed${NC}"
 
 echo -e "${GREEN}Port scan completed... Results in ${BLUE}$website_input/$website_input-full.txt${NC}"
-echo -e "${RED}Port scanning finished...${NC}"
+echo -e "${GREEN}Port scanning finished...${NC}"
 
 
 
