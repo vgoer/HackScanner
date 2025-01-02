@@ -70,4 +70,4 @@ echo -e "${YELLOW}✓[2/2] Live host check completed${NC}"
 
 echo -e "${GREEN}Subdomain collection completed... Results in ${BLUE}$website_input/subdomains.txt${NC}"
 echo -e "${GREEN}Live hosts results in... Results in ${BLUE}$website_input/subdomains_alive.txt${NC}"
-echo -e "${RED}Subdomain collection finished...${NC}"
+echo -e "${GREEN}Subdomain collection finished...${NC}"
