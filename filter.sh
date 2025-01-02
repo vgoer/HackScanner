@@ -60,7 +60,7 @@ echo -e "${RED}Your input domain: $website_url${NC}"
 # 使用waybackurls知道域名下的url
 # Using waybackurls to know the urls under the domain
 echo -e "${YELLOW}[1/2] Using waybackurls to know the urls under the domain...${NC}"
-echo "$website_url" | waybackurls | anew "$website_input/output/output.txt"
+echo "$website_url" | waybackurls | anew | uro >  "$website_input/output/output.txt"
 echo -e "${YELLOW}✓[2/2] Waybackurls completed${NC}"
 
 
@@ -75,7 +75,7 @@ echo -e "${YELLOW}✓[2/2] Katana passive scanning completed${NC}"
 # Katana active scanning
 echo -e "${YELLOW}[1/2] Using katana for active scanning...${NC}"
 # echo "$website_url" | katana  -d 5  -f qurl | hakrawler -d 3 |  uro | anew "$website_input/output/output.txt"
-echo "$website_url" | katana  -d 5  -f qurl |  uro | anew "$website_input/output/output.txt"
+echo "$website_url" | katana  -d 5  -f qurl | uro | anew "$website_input/output/output.txt"
 echo -e "${YELLOW}✓[2/2] Katana active scanning completed${NC}"
 
 # XSS过滤
