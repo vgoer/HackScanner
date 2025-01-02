@@ -74,7 +74,8 @@ echo -e "${YELLOW}✓[2/2] Katana passive scanning completed${NC}"
 # katana主动扫描
 # Katana active scanning
 echo -e "${YELLOW}[1/2] Using katana for active scanning...${NC}"
-echo "$website_url" | katana  -d 5  -f qurl | hakrawler -d 3 |  uro | anew "$website_input/output/output.txt"
+# echo "$website_url" | katana  -d 5  -f qurl | hakrawler -d 3 |  uro | anew "$website_input/output/output.txt"
+echo "$website_url" | katana  -d 5  -f qurl |  uro | anew "$website_input/output/output.txt"
 echo -e "${YELLOW}✓[2/2] Katana active scanning completed${NC}"
 
 # XSS过滤
