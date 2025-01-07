@@ -60,9 +60,15 @@ echo -e "${RED}Your input domain: $website_url${NC}"
 # 使用waybackurls知道域名下的url
 # Using waybackurls to know the urls under the domain
 echo -e "${YELLOW}[1/2] Using waybackurls to know the urls under the domain...${NC}"
-echo "$website_url" | waybackurls | anew | uro >  "$website_input/output/output.txt"
+echo "$website_url" | waybackurls | anew "$website_input/output/output.txt"
 echo -e "${YELLOW}✓[2/2] Waybackurls completed${NC}"
 
+
+# 使用hakrawler扫描
+# Using hakrawler to scan
+# echo -e "${YELLOW}[1/2] Using hakrawler to scan...${NC}"
+# echo "$website_url" | hakrawler -d 3 | uro | anew "$website_input/output/output.txt"
+# echo -e "${YELLOW}✓[2/2] hakrawler completed${NC}"
 
 # katana被动扫描
 # Katana passive scanning
