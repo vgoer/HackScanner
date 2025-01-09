@@ -102,7 +102,7 @@ try:
         |  __  |/ _` |/ __| |/ / `--. \/ __/ _` | '_ \| '_ \ / _ \ '__|
         | |  | | (_| | (__|   < /\__/ / (_| (_| | | | | | | |  __/ |   
         |_|  |_|\__,_|\___|_|\_\\____/ \___\__,_|_| |_|_| |_|\___|_|    
-                                                        
+
                                                         v1.0.0 - @vgoer           
     """
         print(Color.ORANGE + Style.BRIGHT + title.center(63))
@@ -130,9 +130,9 @@ try:
         instructions = "Select attack number:"
         
         print(Fore.WHITE + Style.BRIGHT + "─" * 63)
-        print(Fore.WHITE + Style.BRIGHT + authors.center(63))
+        print(Fore.GREEN + Style.BRIGHT + authors.center(63))
         print(Fore.WHITE + Style.BRIGHT + "─" * 63)
-        print(Fore.WHITE + Style.BRIGHT + instructions.center(63))
+        print(Fore.ORANGE + Style.BRIGHT + instructions.center(63))
         print(Fore.WHITE + Style.BRIGHT + "─" * 63)
 
     def print_exit_menu():
