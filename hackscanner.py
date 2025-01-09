@@ -101,8 +101,9 @@ try:
         | |__| | __ _  ___| | __\ `--.  ___ __ _ _ __  _ __   ___ _ __ 
         |  __  |/ _` |/ __| |/ / `--. \/ __/ _` | '_ \| '_ \ / _ \ '__|
         | |  | | (_| | (__|   < /\__/ / (_| (_| | | | | | | |  __/ |   
-        |_|  |_|\__,_|\___|_|\_\\____/ \___\__,_|_| |_|_| |_|\___|_|       
-                                                    v1.0.0 - @vgoer           
+        |_|  |_|\__,_|\___|_|\_\\____/ \___\__,_|_| |_|_| |_|\___|_|    
+                                                        
+                                                        v1.0.0 - @vgoer           
     """
         print(Color.ORANGE + Style.BRIGHT + title.center(63))
         print(Fore.WHITE + Style.BRIGHT + "─" * 63)
@@ -125,8 +126,8 @@ try:
             print(border_color + "│" + option_color + option.ljust(61) + border_color + "│")
         
         print(border_color + "└" + "─" * 61 + "┘")
-        authors = "Created by: Coffinxp, 1hehaq, HexSh1dow, Naho, AnonKryptiQuz"
-        instructions = "Select an option by entering the corresponding number:"
+        authors = "Created by: Vgoer"
+        instructions = "Select attack number:"
         
         print(Fore.WHITE + Style.BRIGHT + "─" * 63)
         print(Fore.WHITE + Style.BRIGHT + authors.center(63))
@@ -138,13 +139,14 @@ try:
         clear_screen()
 
         panel = Panel(r"""
- ______               ______              
-|   __ \.--.--.-----.|   __ \.--.--.-----.
-|   __ <|  |  |  -__||   __ <|  |  |  -__|
-|______/|___  |_____||______/|___  |_____|
-        |_____|              |_____|      
-   
-  Credit: Coffinxp - 1hehaq - HexSh1dow - AnonKryptiQuz - Naho
+        ______               ______              
+        |   __ \.--.--.-----.|   __ \.--.--.-----.
+        |   __ <|  |  |  -__||   __ <|  |  |  -__|
+        |______/|___  |_____||______/|___  |_____|
+                |_____|              |_____|      
+                                    
+                                    v1.0.0 - @vgoer           
+        Credit: Vgoer
             """,
             style="bold green",
             border_style="blue",
