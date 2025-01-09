@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-VERSION = 'v1.4'
+VERSION = 'v1.0.0'
+AUTHOR = '@vgoer'
 
 class Color:
     BLUE = '\033[94m'
@@ -130,9 +131,9 @@ try:
         instructions = "Select attack number:"
         
         print(Fore.WHITE + Style.BRIGHT + "─" * 63)
-        print(Fore.WHITE + Color.GREEN + Style.BRIGHT + authors.center(63))
+        print(Fore.WHITE + Color.YELLOW + Style.BRIGHT + authors.center(63))
         print(Fore.WHITE + Style.BRIGHT + "─" * 63)
-        print(Fore.WHITE + Color.GREEN + Style.BRIGHT + instructions.center(63))
+        print(Fore.WHITE + Color.YELLOW + Style.BRIGHT + instructions.center(63))
         print(Fore.WHITE + Style.BRIGHT + "─" * 63)
 
     def print_exit_menu():
