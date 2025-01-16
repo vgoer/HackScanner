@@ -68,6 +68,7 @@ echo -e "${YELLOW}[1/2] Checking for live hosts...${NC}"
 cat $website_input/subdomains.txt | httpx-toolkit -threads 200 > $website_input/subdomains_alive.txt
 echo -e "${YELLOW}✓[2/2] Live host check completed${NC}"
 
+# 打印结果
 echo -e "${GREEN}Subdomain collection completed... Results in ${BLUE}$website_input/subdomains.txt${NC}"
 echo -e "${GREEN}Live hosts results in... Results in ${BLUE}$website_input/subdomains_alive.txt${NC}"
 echo -e "${GREEN}Subdomain collection finished...${NC}"
